@@ -12,7 +12,7 @@ const config = {
     }
 };
 
-axios.post('https://api.openai.com/v1/chat/completions', postData, config)
+axios.post('http://127.0.0.1:3000', postData, config)
     .then(response => {
         console.log(response.data);
     })
