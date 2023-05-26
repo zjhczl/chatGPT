@@ -8,11 +8,11 @@ const postData = {
 const config = {
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer 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'
+        'Authorization': 'Bearer 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'
     }
 };
 
-axios.post('http://127.0.0.1:3000', postData, config)
+axios.post('https://api.openai.com/v1/chat/completions', postData, config)
     .then(response => {
         console.log(response.data);
     })
