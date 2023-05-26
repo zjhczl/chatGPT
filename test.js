@@ -8,7 +8,7 @@ const postData = {
 const config = {
     headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer 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'
+        'Authorization': 'Bearer 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'
     }
 };
 
