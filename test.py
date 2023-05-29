@@ -27,8 +27,7 @@ def talk(message):
     r = openai.ChatCompletion.create(
     model="gpt-3.5-turbo",
     messages=[
-            {"role": "system", "content": message},
-            {"role": "user", "content": "Who won the world series in 2020?"}
+            {"role": "user", "content": message}
         ]
     )
     print(r['choices'][0]['message']['content'])
