@@ -20,13 +20,18 @@ import requests
 
 # chatGPT()
 import os
+import sys
 import openai
-openai.api_key = os.getenv("OPENAI_API_KEY")
-r = openai.ChatCompletion.create(
-  model="gpt-3.5-turbo",
-  messages=[
-        {"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Who won the world series in 2020?"}
-    ]
-)
-print(r)
+def talk(message):
+    openai.api_key = os.getenv("OPENAI_API_KEY")
+    r = openai.ChatCompletion.create(
+    model="gpt-3.5-turbo",
+    messages=[
+            {"role": "system", "content": message},
+            {"role": "user", "content": "Who won the world series in 2020?"}
+        ]
+    )
+    print(response['choices'][0]['message']['content'])
+message = sys.argv[1]
+print(message)
+talk(message)
