@@ -31,7 +31,7 @@ def talk(message):
             {"role": "user", "content": "Who won the world series in 2020?"}
         ]
     )
-    print(response['choices'][0]['message']['content'])
+    print(r['choices'][0]['message']['content'])
 message = sys.argv[1]
 print(message)
 talk(message)
