@@ -23,4 +23,5 @@ import os
 import openai
 openai.organization = "org-2Rtu2f0o58MCeWGZNfE2MpHw"
 openai.api_key = os.getenv("OPENAI_API_KEY")
-openai.Model.list()
+ms =openai.Model.list()
+print(ms)
