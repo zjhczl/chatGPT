@@ -23,5 +23,7 @@ import os
 import openai
 openai.organization = "org-2Rtu2f0o58MCeWGZNfE2MpHw"
 openai.api_key = os.getenv("OPENAI_API_KEY")
-ms =openai.Model.list()
-print(ms)
+
+prompt = 'Once upon a time'
+response = openai.Completion.create(model="text-davinci-003",prompt=prompt, temperature=0.5, max_tokens=100)
+print(response)
