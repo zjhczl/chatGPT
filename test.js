@@ -25,7 +25,7 @@ const url = 'https://api.openai.com/v1/chat/completions';
 const config = {
     headers: {
         'content-type': 'application/json',
-        authorization: 'Bearer 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',
+        'Authorization': 'Bearer ' + "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",
         'user-agent': 'PostmanRuntime/7.32.2',
         accept: '*/*',
         'postman-token': 'f746a838-7918-4f05-a1ca-e9c5ef4f1610',
