@@ -14,25 +14,25 @@ app.post('/', (req, res) => {
     console.log(req.headers)
     console.log(req.body)
 
-    const url = 'http://ssr2.zjhczl.xyz:80';
-    const data = {
-        name: "John Doe",
-        email: 'johndoe@example.com',
-    };
+    // const url = 'http://127.0.0.1:80';
+    // const data = {
+    //     name: "John Doe",
+    //     email: 'johndoe@example.com',
+    // };
 
-    const config = {
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    };
+    // const config = {
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    // };
 
-    axios.post(url, data, config)
-        .then((response) => {
-            console.log(response.data);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+    // axios.post(url, data, config)
+    //     .then((response) => {
+    //         console.log(response.data);
+    //     })
+    //     .catch((error) => {
+    //         console.log(error);
+    //     });
 });
 
 

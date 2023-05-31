@@ -19,13 +19,27 @@
 //     .catch(error => {
 //         console.error(error);
 //     });
+const axios = require('axios');
+const url = 'https://api.openai.com/v1/chat/completions';
 
-import { Configuration, OpenAIApi } from "openai";
-const openai = require('openai');
-const configuration = new Configuration({
-    organization: "org-2Rtu2f0o58MCeWGZNfE2MpHw",
-    apiKey: process.env.OPENAI_API_KEY,
-});
-// const openai = new OpenAIApi(configuration);
-// const response = await openai.listEngines();
-console.log(configuration)
+const config = {
+    headers: {
+        'Content-Type': 'application/json',
+        "Authorization": "Bearer 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"
+
+    },
+};
+
+const data = {
+    "model": "gpt-3.5-turbo",
+    "messages": [{ "role": "user", "content": "我是谁" }],
+    "temperature": 0.7
+};
+
+axios.post(url, data, config)
+    .then((response) => {
+        console.log(response.data);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
