@@ -20,14 +20,17 @@
 //         console.error(error);
 //     });
 const axios = require('axios');
-const url = 'https://api.openai.com/v1/chat/completions';
+const url = 'http://127.0.0.1:80';
 
 const config = {
     headers: {
-        'Content-Type': 'application/json',
-        "Authorization": "Bearer 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"
-
-    },
+        'content-type': 'application/json',
+        authorization: 'Bearer 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',
+        'user-agent': 'PostmanRuntime/7.32.2',
+        accept: '*/*',
+        'postman-token': 'f746a838-7918-4f05-a1ca-e9c5ef4f1610',
+        connection: 'keep-alive',
+    }
 };
 
 const data = {
