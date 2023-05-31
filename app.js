@@ -27,6 +27,7 @@ app.post('/', (req, res) => {
         })
         .catch(error => {
             // 处理请求错误
+            console.log("err.....")
         });
 });
 
