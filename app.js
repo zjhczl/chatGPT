@@ -19,7 +19,7 @@ app.get('/test', (req, res) => {
 
 
 app.post('/', (req, res) => {
-    res.send(req.headers);
+    // res.send(req.headers);
     res.send(req.body);
 });
 
