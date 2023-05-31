@@ -16,9 +16,13 @@ app.post('/', (req, res) => {
     axios.post('ssr2.zjhczl.xyz:80', {
             data: {
                 // 请求 body 数据
+                "model": "gpt-3.5-turbo",
+                "messages": [{ "role": "user", "content": "我是谁" }],
+                "temperature": 0.7
             },
             headers: {
                 // 请求头数据
+                "Content-Type": "application/json"
             }
         })
         .then(response => {
