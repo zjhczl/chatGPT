@@ -21,10 +21,11 @@
 //     });
 
 import { Configuration, OpenAIApi } from "openai";
-// const configuration = new Configuration({
-//     organization: "org-2Rtu2f0o58MCeWGZNfE2MpHw",
-//     apiKey: process.env.OPENAI_API_KEY,
-// });
-// // const openai = new OpenAIApi(configuration);
-// // const response = await openai.listEngines();
-// console.log(configuration)
+const openai = require('openai');
+const configuration = new Configuration({
+    organization: "org-2Rtu2f0o58MCeWGZNfE2MpHw",
+    apiKey: process.env.OPENAI_API_KEY,
+});
+// const openai = new OpenAIApi(configuration);
+// const response = await openai.listEngines();
+console.log(configuration)
