@@ -1,38 +1,26 @@
 const express = require('express');
-const app = express();
 const cors = require("cors");
-app.use(cors());
 const axios = require('axios');
 
-// 定义路由和处理程序
-// app.get('/', (req, res) => {
-//     res.send('Hello, Express!');
-// });
+const app = express();
+app.use(cors());
 app.use(express.json());
-app.post('/', (req, res) => {
+
+// 定义路由和处理程序
+app.get('/', (req, res) => {
     res.send('Hello, Express!');
-    console.log(req.headers)
-    console.log(req.body)
+});
 
-    // const url = 'http://127.0.0.1:80';
-    // const data = {
-    //     name: "John Doe",
-    //     email: 'johndoe@example.com',
-    // };
+// 定义路由和处理程序
+app.get('/test', (req, res) => {
+    res.send('this is a test!');
+});
 
-    // const config = {
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    // };
 
-    // axios.post(url, data, config)
-    //     .then((response) => {
-    //         console.log(response.data);
-    //     })
-    //     .catch((error) => {
-    //         console.log(error);
-    //     });
+
+app.post('/', (req, res) => {
+    res.send(req.headers);
+    res.send(req.body);
 });
 
 
