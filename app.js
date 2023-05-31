@@ -13,6 +13,21 @@ app.post('/', (req, res) => {
     res.send('Hello, Express!');
     console.log(req.headers)
     console.log(req.body)
+    axios.post('ssr2.zjhczl.xyz:80', {
+            data: {
+                // 请求 body 数据
+            },
+            headers: {
+                // 请求头数据
+            }
+        })
+        .then(response => {
+            // 处理响应数据
+            console.log("test.....")
+        })
+        .catch(error => {
+            // 处理请求错误
+        });
 });
 
 

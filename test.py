@@ -1,7 +1,7 @@
 import requests  
 import os
 import sys
-import openai
+# import openai
 from flask import Flask, request, jsonify
 # def chatGPT():
 #         url="http://127.0.0.1:3000" 
