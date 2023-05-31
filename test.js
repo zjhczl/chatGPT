@@ -20,7 +20,7 @@
 //         console.error(error);
 //     });
 const axios = require('axios');
-const url = 'http://127.0.0.1:80';
+const url = 'https://api.openai.com/v1/chat/completions';
 
 const config = {
     headers: {
