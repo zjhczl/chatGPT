@@ -62,9 +62,9 @@ app.post('/test', async(req, res) => {
     });
     var config = {
         method: 'post',
-        url: 'https://api.openai-proxy.com/v1/chat/completions',
+        url: 'https://api.openai.com/v1/completions',
         headers: {
-            'Authorization': 'Bearer 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',
+            'Authorization': 'Bearer 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',
             'Content-Type': 'application/json',
         },
         data: data
