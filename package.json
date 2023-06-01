@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "scripts": {
     "test": "babel-node test.js",
     "start": "babel-node app.js"
