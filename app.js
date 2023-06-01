@@ -49,7 +49,7 @@ app.post('/chat', (req, res) => {
         });
     } else {
 
-        res.send(bdy)
+        res.send(req)
     }
 
 
