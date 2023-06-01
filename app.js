@@ -54,7 +54,7 @@ app.post('/chat', (req, res) => {
         });
     } else {
 
-        res.send(req)
+        res.send(req);
     }
 
 
@@ -62,21 +62,25 @@ app.post('/chat', (req, res) => {
 });
 
 app.get('/chat', (req, res) => {
+    const message = req.query.message;
+    if (message) {
+        const { Configuration, OpenAIApi } = require("openai");
 
-    const { Configuration, OpenAIApi } = require("openai");
+        const configuration = new Configuration({
+            apiKey: process.env.OPENAI_API_KEY,
+        });
+        const openai = new OpenAIApi(configuration);
 
-    const configuration = new Configuration({
-        apiKey: process.env.OPENAI_API_KEY,
-    });
-    const openai = new OpenAIApi(configuration);
-
-    openai.createChatCompletion({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: "你是谁" }],
-    }).then((completion) => {
-        m = completion.data.choices[0].message;
-        res.send(m["content"])
-    });
+        openai.createChatCompletion({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: message }],
+        }).then((completion) => {
+            m = completion.data.choices[0].message;
+            res.send(m["content"]);
+        });
+    } else {
+        res.send("参数错误");
+    }
 
 
 });
