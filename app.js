@@ -29,8 +29,8 @@ app.post('/', (req, res) => {
 
 app.post('/chat', (req, res) => {
     bdy = req.body
-    if ("message" in body) {
-        content = body["message"]
+    if ("message" in bdy) {
+        content = bdy["message"]
         const { Configuration, OpenAIApi } = require("openai");
 
         const configuration = new Configuration({
