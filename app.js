@@ -7,12 +7,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
-    // apiKey: "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",
-});
-
-
 
 // 定义路由和处理程序
 app.get('/', (req, res) => {
