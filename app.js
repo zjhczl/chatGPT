@@ -45,7 +45,8 @@ app.post('/chat', (req, res) => {
             res.send(m["content"])
         });
     } else {
-        res.send("post数据不正确")
+
+        res.send(body)
     }
 
 
