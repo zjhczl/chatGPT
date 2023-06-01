@@ -71,7 +71,7 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-
+console.log(process.env.OPENAI_API_KEY)
 async function tlak() {
     const response = await openai.createCompletion({
         model: "text-davinci-003",
