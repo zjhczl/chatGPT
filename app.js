@@ -47,6 +47,25 @@ app.post('/chat', (req, res) => {
 
 });
 
+app.get('/chat', (req, res) => {
+
+    const { Configuration, OpenAIApi } = require("openai");
+
+    const configuration = new Configuration({
+        apiKey: process.env.OPENAI_API_KEY,
+    });
+    const openai = new OpenAIApi(configuration);
+
+    openai.createChatCompletion({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: "你是谁" }],
+    }).then((completion) => {
+        m = completion.data.choices[0].message;
+        res.send(m["content"])
+    });
+
+
+});
 
 
 // 启动服务器
