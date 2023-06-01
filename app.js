@@ -21,6 +21,11 @@ app.get('/test', (req, res) => {
     res.send('this is a test!');
 });
 
+app.post('/test', (req, res) => {
+
+    res.send(req)
+
+});
 
 
 app.post('/', (req, res) => {
