@@ -28,21 +28,26 @@ app.post('/', (req, res) => {
 
 app.post('/chat', (req, res) => {
     body = req.body
-    content = body["message"]
-    const { Configuration, OpenAIApi } = require("openai");
+    if ("message" in body) {
+        content = body["message"]
+        const { Configuration, OpenAIApi } = require("openai");
 
-    const configuration = new Configuration({
-        apiKey: process.env.OPENAI_API_KEY,
-    });
-    const openai = new OpenAIApi(configuration);
+        const configuration = new Configuration({
+            apiKey: process.env.OPENAI_API_KEY,
+        });
+        const openai = new OpenAIApi(configuration);
 
-    openai.createChatCompletion({
-        model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: content }],
-    }).then((completion) => {
-        m = completion.data.choices[0].message;
-        res.send(m["content"])
-    });
+        openai.createChatCompletion({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: content }],
+        }).then((completion) => {
+            m = completion.data.choices[0].message;
+            res.send(m["content"])
+        });
+    } else {
+        res.send("post数据不正确")
+    }
+
 
 
 });
