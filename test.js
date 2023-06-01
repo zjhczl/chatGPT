@@ -87,5 +87,4 @@ async function tlak() {
     return response
 }
 console.log("--------")
-r = tlak()
-console.log(r)
+tlak().then((data) => { console.log(data) })
