@@ -33,21 +33,21 @@ def talk(message):
     )
     print(r['choices'][0]['message']['content'])
     return r['choices'][0]['message']['content']
-# message = sys.argv[1]
-# print(message)
-# talk(message)
+message = sys.argv[1]
+print(message)
+talk(message)
 
 
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
-@app.route('/api', methods=['POST'])
-def api():
-    data = request.get_json() # 获取POST请求中的数据
-    # 在这里编写你的业务逻辑，处理数据
-    response = talk("你好")
+# @app.route('/api', methods=['POST'])
+# def api():
+#     data = request.get_json() # 获取POST请求中的数据
+#     # 在这里编写你的业务逻辑，处理数据
+#     response = talk("你好")
 
-    return jsonify(response) # 返回响应数据
+#     return jsonify(response) # 返回响应数据
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
