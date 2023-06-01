@@ -26,7 +26,7 @@ app.post('/', (req, res) => {
 });
 
 
-app.post('/test', (req, res) => {
+app.post('/chat', (req, res) => {
     body = req.body
     content = body["message"]
     const { Configuration, OpenAIApi } = require("openai");
