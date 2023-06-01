@@ -64,7 +64,7 @@ app.post('/test', async(req, res) => {
         method: 'post',
         url: 'https://api.openai.com/v1/chat/completions',
         headers: {
-            'Authorization': 'Bearer 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',
+            'Authorization': 'Bearer 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',
             'Content-Type': 'application/json',
         },
         data: data
