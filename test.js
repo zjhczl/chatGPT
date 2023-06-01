@@ -1,3 +1,4 @@
+const axios = require('axios');
 async function callOpenAI() {
     const prompt = "Hello, how are you?";
     const engine = "text-davinci-002";
