@@ -28,7 +28,7 @@ app.post('/', (req, res) => {
 
 
 app.post('/chat', (req, res) => {
-    body = req.body
+    bdy = req.body
     if ("message" in body) {
         content = body["message"]
         const { Configuration, OpenAIApi } = require("openai");
@@ -47,7 +47,7 @@ app.post('/chat', (req, res) => {
         });
     } else {
 
-        res.send(body)
+        res.send(bdy)
     }
 
 
