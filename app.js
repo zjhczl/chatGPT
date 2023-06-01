@@ -32,7 +32,7 @@ app.post('/', (req, res) => {
 });
 
 
-app.post('/test', async(req, res) => {
+app.post('/test', (req, res) => {
 
     const { Configuration, OpenAIApi } = require("openai");
 
