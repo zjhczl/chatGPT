@@ -58,13 +58,13 @@ app.post('/test', async(req, res) => {
 
     var data = JSON.stringify({
         "model": "gpt-3.5-turbo",
-        "messages": "你好" //messages就是你发的消息是数组形式
+        "messages": [{ "role": "user", "content": "你是谁" }] //messages就是你发的消息是数组形式
     });
     var config = {
         method: 'post',
         url: 'https://api.openai-proxy.com/v1/chat/completions',
         headers: {
-            'Authorization': 'Bearer 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',
+            'Authorization': 'Bearer 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',
             'Content-Type': 'application/json',
         },
         data: data
