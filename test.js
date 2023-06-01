@@ -1,17 +1,19 @@
-const { Configuration, OpenAIApi } = require("openai");
+async function callOpenAI() {
+    const prompt = "Hello, how are you?";
+    const engine = "text-davinci-002";
+    const maxTokens = 5;
 
-const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
+    const response = await axios.post(
+        'https://api.openai-proxy.com/v1/engines/' + engine + '/completions', {
+            prompt: prompt,
+            max_tokens: maxTokens
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + "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"
+            }
+        }
+    );
 
-const response = await openai.createCompletion({
-    model: "text-davinci-003",
-    prompt: "Convert this text to a programmatic command:\n\nExample: Ask Constance if we need some bread\nOutput: send-msg `find constance` Do we need some bread?\n\nReach out to the ski store and figure out if I can get my skis fixed before I leave on Thursday",
-    temperature: 0,
-    max_tokens: 100,
-    top_p: 1.0,
-    frequency_penalty: 0.2,
-    presence_penalty: 0.0,
-    stop: ["\n"],
-});
+    console.log(response.data.choices[0].text);
+}
