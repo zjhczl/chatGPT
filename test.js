@@ -17,3 +17,5 @@ async function callOpenAI() {
 
     console.log(response.data.choices[0].text);
 }
+
+callOpenAI();
