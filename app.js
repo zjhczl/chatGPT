@@ -27,7 +27,8 @@ app.post('/', (req, res) => {
 
 
 app.post('/test', (req, res) => {
-
+    body = req.body
+    content = body["message"]
     const { Configuration, OpenAIApi } = require("openai");
 
     const configuration = new Configuration({
@@ -37,7 +38,7 @@ app.post('/test', (req, res) => {
 
     openai.createChatCompletion({
         model: "gpt-3.5-turbo",
-        messages: [{ role: "user", content: "Hello world" }],
+        messages: [{ role: "user", content: content }],
     }).then((completion) => {
         m = completion.data.choices[0].message;
         res.send(m["content"])
